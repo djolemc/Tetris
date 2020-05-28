@@ -370,6 +370,8 @@ function CONTROL(event) {
     }  else if (event.keyCode == 80) {
        alert('Paused, press Enter to continue...')
 
+    } else if (event.keyCode == 113) {
+        window.location.reload()
     }
 
 }
@@ -405,7 +407,7 @@ function changeLevel() {
 
 
  //
- // drop()
+ drop()
 
 // start = setInterval(drop(), 1);
 
