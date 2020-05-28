@@ -1,4 +1,4 @@
-#score {
+#score, #level {
     display: inline;
     font-size: 25px;
     font-weight: bold;
@@ -43,7 +43,7 @@ body {
     position: relative;
     color: white;
     font-size: 24px;
-    width: 150px;
+    width: 250px;
     float: left;
     margin:30px;
 }

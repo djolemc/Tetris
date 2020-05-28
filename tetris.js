@@ -1,7 +1,7 @@
 //Get windows size and set board and piece size
 
 var height = window.innerHeight;
-multiplier= Math.floor(height/200);
+multiplier = Math.floor(height / 200);
 
 boardHeight = 200 * multiplier;
 boardWidth = 100 * multiplier;
@@ -15,7 +15,7 @@ window.onresize = setBoardSize()
 
 function setBoardSize() {
     var height = window.innerHeight;
-    multiplier= Math.floor(height/200);
+    multiplier = Math.floor(height / 200);
     boardHeight = 200 * multiplier;
     boardWidth = 100 * multiplier;
     boardSize.height = boardHeight
@@ -25,7 +25,6 @@ function setBoardSize() {
 //************************************************************************
 
 
-
 const cvs = document.getElementById("tetris");
 const ctx = cvs.getContext("2d");
 const scoreElement = document.getElementById('score')
@@ -33,11 +32,11 @@ const miniCvs = document.getElementById('nextPiece')
 const nxt = miniCvs.getContext("2d")
 
 
-const MINI= 5;
+const MINI = 5;
 const ROW = 20;
 const COL = COLUMN = 10;
 const SQ = squareSize = 10 * multiplier;
-console.log (multiplier)
+console.log(multiplier)
 const VACANT = "BLACK"; // color of empty square
 
 
@@ -58,7 +57,6 @@ function drawMiniSquare(x, y, color) {
     nxt.strokeStyle = "black";
     nxt.strokeRect(x * SQ, y * SQ, SQ, SQ);
 }
-
 
 
 //create the boards
@@ -92,6 +90,7 @@ function drawBoard() {
         }
     }
 }
+
 function drawMiniBoard() {
 
     for (r = 0; r < MINI; r++) {
@@ -126,7 +125,6 @@ function randomPiece() {
 
 let p = randomPiece();
 let nextPiece = randomPiece();
-
 
 
 //The object peace
@@ -167,14 +165,14 @@ Piece.prototype.draw = function () {
 }
 
 //draw next piece to miniboard
-Piece.prototype.drawNext = function (tetris,color) {
-    for (r=0; r<tetris.length; r++) {
+Piece.prototype.drawNext = function (tetris, color) {
+    for (r = 0; r < tetris.length; r++) {
 
-        for (c=0; c<tetris.length; c++) {
+        for (c = 0; c < tetris.length; c++) {
 
-            if (tetris[r][c] ) {
+            if (tetris[r][c]) {
                 // console.log(tetris[r][c])
-                drawMiniSquare(c+1,r+1,color)
+                drawMiniSquare(c + 1, r + 1, color)
             }
         }
     }
@@ -190,11 +188,11 @@ Piece.prototype.undraw = function () {
 
 Piece.prototype.moveDown = function () {
 
-    //draws nest piece
+    //draws next piece
     this.drawNext(nextPiece.activeTetromino, nextPiece.color)
 
 
-    if (!this.collision(0,1,this.activeTetromino)) {
+    if (!this.collision(0, 1, this.activeTetromino)) {
         this.undraw();
         this.y++;
         this.draw();
@@ -213,7 +211,7 @@ Piece.prototype.moveDown = function () {
 
 //move Right the piece
 Piece.prototype.moveRight = function () {
-    if (!this.collision(1,0,this.activeTetromino)) {
+    if (!this.collision(1, 0, this.activeTetromino)) {
         this.undraw();
         this.x++;
         this.draw();
@@ -222,7 +220,7 @@ Piece.prototype.moveRight = function () {
 
 //move Left the piece
 Piece.prototype.moveLeft = function () {
-    if (!this.collision(-1,0,this.activeTetromino)) {
+    if (!this.collision(-1, 0, this.activeTetromino)) {
         this.undraw();
         this.x--;
         this.draw();
@@ -234,8 +232,8 @@ Piece.prototype.rotate = function () {
     let nextPattern = this.tetromino[(this.tetrominoN + 1) % this.tetromino.length];
     let kick = 0
 
-    if (this.collision(0,0,nextPattern)) {
-        if(this.x > COL/2) {
+    if (this.collision(0, 0, nextPattern)) {
+        if (this.x > COL / 2) {
             //it's the right wall
             kick = -1; //we need to move the piece to the left
         } else {
@@ -244,7 +242,7 @@ Piece.prototype.rotate = function () {
         }
     }
 
-    if (!this.collision(kick,0,nextPattern)) {
+    if (!this.collision(kick, 0, nextPattern)) {
         this.undraw();
         this.x += kick;
         this.tetrominoN = (this.tetrominoN + 1) % this.tetromino.length;
@@ -253,7 +251,7 @@ Piece.prototype.rotate = function () {
     }
 }
 let score = 0;
-Piece.prototype.lock = function() {
+Piece.prototype.lock = function () {
     for (r = 0; r < this.activeTetromino.length; r++) {
         for (c = 0; c < this.activeTetromino.length; c++) {
             //we skip the vacant squares
@@ -268,40 +266,40 @@ Piece.prototype.lock = function() {
                 break;
             }
             //we lock the piece
-            board[this.y+r][this.x+c]=this.color;
+            board[this.y + r][this.x + c] = this.color;
 
         }
     }
 
-   // remove full rows
+    // remove full rows
 
-    for (r=0; r< ROW; r++) {
+    for (r = 0; r < ROW; r++) {
         let isRowFull = true;
-        for ( c = 0; c<COL; c++) {
+        for (c = 0; c < COL; c++) {
             isRowFull = isRowFull && (board[r][c] != VACANT);
         }
         if (isRowFull) {
             //if the row is full
             // we move down all the rows
-            for (y=r; y >1; y--) {
+            for (y = r; y > 1; y--) {
                 for (c = 0; c < COL; c++) {
                     board[y][c] = board[y - 1][c]
                 }
             }
-                //the top row board has no row above it
-                for (c = 0; c < COL; c++) {
-                    board[0][c] = VACANT;
-                }
-                //increment the score
-                score +=100
+            //the top row board has no row above it
+            for (c = 0; c < COL; c++) {
+                board[0][c] = VACANT;
             }
+            //increment the score
+            score += 100
+        }
 
 
     }
     //update the board
     drawBoard()
     //update score
-    scoreElement.innerHTML=score;
+    scoreElement.innerHTML = score;
 
 
 }
@@ -351,32 +349,35 @@ document.addEventListener("keydown", CONTROL)
 
 function CONTROL(event) {
     if (event.keyCode == 37) {
+        mySound.play();
         p.moveLeft()
         dropStart = Date.now()
     } else if (event.keyCode == 38) {
         p.rotate()
+        mySound.play();
         dropStart = Date.now()
     } else if (event.keyCode == 39) {
+        mySound.play();
         p.moveRight()
         dropStart = Date.now()
     } else if (event.keyCode == 40) {
+        mySound.play();
+        p.moveDown()
+    } else if (event.keyCode == 32) {
         p.moveDown()
     }
 }
 
-//drop the piece every 1 second
+//drop the piece
 
 let dropStart = Date.now();
 let gameOver = false;
 
 function drop() {
+    speed = changeLevel();
     let now = Date.now();
     let delta = now - dropStart;
-    let level = changeLevel(score);
-    console.log('Score: '+score)
-
-    if (delta > level) {
-        console.log(level)
+    if (delta > speed) {
         p.moveDown();
         dropStart = Date.now()
     }
@@ -385,24 +386,38 @@ function drop() {
     }
 }
 
-function changeLevel(score) {
-    level = 1000
+function fastDrop() {
 
-    if (score % 100 == 0 ) {
-        level = level - 100
-        if (level <= 100) level = 100
-        console.log("Level: "+level)
-        return level
+        p.moveDown();
+        dropStart = Date.now()
+
+    if (!gameOver) {
+        requestAnimationFrame(drop);
     }
+}
 
+//Change droping speed and update UI level
+function changeLevel() {
+    console.log(score)
+    speed = 1000;
+
+    mult= Math.floor(score / 100);
+
+    speed = speed - (mult*50)
+
+    level = document.getElementById('level')
+
+    level.innerHTML = mult + 1;
+
+    if (speed <= 50 ) speed = 50
+
+    return speed;
 }
 
  drop()
 
 
 
-
-//757
 
 
 
