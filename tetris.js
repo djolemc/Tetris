@@ -395,17 +395,11 @@ function drop() {
 //Change drop speed and update UI level
 function changeLevel() {
     speed = 1000;
-
     mult= Math.floor(score / 100);
-
     speed = speed - (mult*50)
-
     level = document.getElementById('level')
-
     level.innerHTML = mult + 1;
-
     if (speed <= 50 ) speed = 50
-
     return speed;
 }
 

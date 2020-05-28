@@ -66,9 +66,12 @@ body {
     text-align: center;
 }
 
+#scores {
+    margin-top: 25px;
+}
 #newGame {
     position: relative;
-    margin-top: 98%;
+    margin-top: 100px;
 }
 
 /* Modal Content/Box */
@@ -94,4 +97,14 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+#shortcuts {
+    font-size: 16px;
+    line-height: normal;
+    margin-left: -20px;
+}
+
+#shortcuts p {
+    margin: 5px;
 }
