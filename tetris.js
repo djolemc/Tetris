@@ -38,7 +38,7 @@ const COL = COLUMN = 10;
 const SQ = squareSize = 10 * multiplier;
 console.log(multiplier)
 const VACANT = "BLACK"; // color of empty square
-
+var waitingForPause = false;
 
 //draw a square
 function drawSquare(x, y, color) {
@@ -171,7 +171,6 @@ Piece.prototype.drawNext = function (tetris, color) {
         for (c = 0; c < tetris.length; c++) {
 
             if (tetris[r][c]) {
-                // console.log(tetris[r][c])
                 drawMiniSquare(c + 1, r + 1, color)
             }
         }
@@ -260,9 +259,10 @@ Piece.prototype.lock = function () {
             }
             //pieces to lock on top = game over
             if (this.y + r < 0) {
-                alert("Game Over");
+                // alert("Game Over");
                 //stop animation frame
                 gameOver = true;
+                modal.style.display = "block";
                 break;
             }
             //we lock the piece
@@ -291,7 +291,7 @@ Piece.prototype.lock = function () {
                 board[0][c] = VACANT;
             }
             //increment the score
-            score += 100
+            score += 10
         }
 
 
@@ -365,7 +365,13 @@ function CONTROL(event) {
         p.moveDown()
     } else if (event.keyCode == 32) {
         p.moveDown()
+    }else if (event.keyCode == 77) {
+        muteSounds()
+    }  else if (event.keyCode == 80) {
+       alert('Paused, press Enter to continue...')
+
     }
+
 }
 
 //drop the piece
@@ -386,19 +392,8 @@ function drop() {
     }
 }
 
-function fastDrop() {
-
-        p.moveDown();
-        dropStart = Date.now()
-
-    if (!gameOver) {
-        requestAnimationFrame(drop);
-    }
-}
-
-//Change droping speed and update UI level
+//Change drop speed and update UI level
 function changeLevel() {
-    console.log(score)
     speed = 1000;
 
     mult= Math.floor(score / 100);
@@ -414,9 +409,11 @@ function changeLevel() {
     return speed;
 }
 
- drop()
 
+ //
+ // drop()
 
+// start = setInterval(drop(), 1);
 
 
 
