@@ -145,7 +145,6 @@ function Piece(tetromino, color) {
 
 }
 
-
 //fill function
 Piece.prototype.fill = function (color) {
     for (r = 0; r < this.activeTetromino.length; r++) {
@@ -178,14 +177,12 @@ Piece.prototype.drawNext = function (tetris, color) {
     }
 }
 
-
 //undraw a piece
-
 Piece.prototype.undraw = function () {
     this.fill(VACANT)
 }
 
-
+//Move Down the piece
 Piece.prototype.moveDown = function () {
 
     //draws next piece
@@ -318,11 +315,9 @@ Piece.prototype.lock = function () {
 
 }
 
-
 /*
 *Calculate score
 * */
-
 Piece.prototype.calculateScore = function (clearedRows) {
 
     level = parseInt(document.getElementById('level').textContent)
@@ -349,13 +344,6 @@ Piece.prototype.calculateScore = function (clearedRows) {
     }
 
      return score;
-
-}
-
-//Clear temporary var
-function resetVar() {
-     clearedRows = 0;
-    // console.log("reseting: "+clearedRows)
 
 }
 
@@ -398,6 +386,8 @@ Piece.prototype.collision = function (x, y, piece) {
     }
     return false;
 }
+
+
 
 
 
@@ -455,6 +445,8 @@ function drop() {
 }
 
 //Change drop speed and update UI level
+
+
 function changeLevel() {
     speed = 1000;
     mult= Math.floor(score / 1000);
@@ -465,8 +457,16 @@ function changeLevel() {
     return speed;
 }
 
+//Clear temporary var
+function resetVar() {
+    clearedRows = 0;
+    // console.log("reseting: "+clearedRows)
+
+}
 
  //
+
+
  drop()
 
 // start = setInterval(drop(), 1);
