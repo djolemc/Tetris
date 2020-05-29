@@ -250,6 +250,8 @@ Piece.prototype.rotate = function () {
     }
 }
 let score = 0;
+var clearedRows =0;
+
 Piece.prototype.lock = function () {
     for (r = 0; r < this.activeTetromino.length; r++) {
         for (c = 0; c < this.activeTetromino.length; c++) {
@@ -277,8 +279,12 @@ Piece.prototype.lock = function () {
         let isRowFull = true;
         for (c = 0; c < COL; c++) {
             isRowFull = isRowFull && (board[r][c] != VACANT);
+
         }
         if (isRowFull) {
+
+            clearedRows++
+
             //if the row is full
             // we move down all the rows
             for (y = r; y > 1; y--) {
@@ -290,19 +296,68 @@ Piece.prototype.lock = function () {
             for (c = 0; c < COL; c++) {
                 board[0][c] = VACANT;
             }
-            //increment the score
-            score += 10
         }
 
 
     }
+
+    score += this.calculateScore(clearedRows);
+
+    //Reset cleared rows variable
+    setTimeout(function() { resetVar(clearedRows)}, 1000);
+
     //update the board
     drawBoard()
+
     //update score
     scoreElement.innerHTML = score;
 
+}
+
+
+/*
+*Calculate score
+* */
+
+Piece.prototype.calculateScore = function (clearedRows) {
+
+    level = parseInt(document.getElementById('level').textContent)
+ //   console.log("Level:"+level)
+ //   console.log("Redova:" + clearedRows)
+
+    switch (clearedRows) {
+
+        case 1:
+            score = 40 * (level+1)
+            break;
+        case 2:
+            score = 100 * (level+1)
+            break;
+        case 3:
+            score = 300 * (level+1)
+            break;
+        case 4:
+            score = 1200 * (level+1)
+            break;
+        default:
+            score=0;
+
+    }
+
+  //  console.log("Score:"+ score)
+    return score;
 
 }
+
+
+function resetVar() {
+    //console.log(clearedRows)
+    clearedRows = 0;
+    console.log("reseting: "+clearedRows)
+
+}
+
+
 
 
 //Collision function
@@ -341,6 +396,9 @@ Piece.prototype.collision = function (x, y, piece) {
     }
     return false;
 }
+
+
+
 
 
 //Control the piece
@@ -397,10 +455,10 @@ function drop() {
 //Change drop speed and update UI level
 function changeLevel() {
     speed = 1000;
-    mult= Math.floor(score / 100);
-    speed = speed - (mult*50)
+    mult= Math.floor(score / 1000);
+    speed = speed - (mult*100)
     level = document.getElementById('level')
-    level.innerHTML = mult + 1;
+    level.innerHTML = mult;
     if (speed <= 50 ) speed = 50
     return speed;
 }
