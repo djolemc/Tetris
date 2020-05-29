@@ -1,4 +1,4 @@
-#score, #level {
+#score, #level, #lines {
     display: inline;
     font-size: 25px;
     font-weight: bold;

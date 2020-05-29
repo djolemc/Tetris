@@ -28,6 +28,7 @@ function setBoardSize() {
 const cvs = document.getElementById("tetris");
 const ctx = cvs.getContext("2d");
 const scoreElement = document.getElementById('score')
+const clearedRowsElement = document.getElementById('lines')
 const miniCvs = document.getElementById('nextPiece')
 const nxt = miniCvs.getContext("2d")
 
@@ -250,6 +251,7 @@ Piece.prototype.rotate = function () {
     }
 }
 let score = 0;
+let cleared = 0;
 var clearedRows =0;
 
 Piece.prototype.lock = function () {
@@ -284,6 +286,7 @@ Piece.prototype.lock = function () {
         if (isRowFull) {
 
             clearedRows++
+            cleared++
 
             //if the row is full
             // we move down all the rows
@@ -311,6 +314,7 @@ Piece.prototype.lock = function () {
 
     //update score
     scoreElement.innerHTML = score;
+    clearedRowsElement.innerHTML = cleared;
 
 }
 
@@ -344,16 +348,14 @@ Piece.prototype.calculateScore = function (clearedRows) {
 
     }
 
-  //  console.log("Score:"+ score)
-    return score;
+     return score;
 
 }
 
-
+//Clear temporary var
 function resetVar() {
-    //console.log(clearedRows)
-    clearedRows = 0;
-    console.log("reseting: "+clearedRows)
+     clearedRows = 0;
+    // console.log("reseting: "+clearedRows)
 
 }
 
