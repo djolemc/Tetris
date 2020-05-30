@@ -1,71 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div id="main">
-    <!--<canvas id="tetris" width="300" height="600"></canvas>-->
-    <div id="canvas">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <!--<canvas id="tetris" width="300" height="600"></canvas>-->
+      <div id="canvas">
         <canvas id="tetris"></canvas>
-    </div>
-    <div id="nextPieceStyle">
+      </div>
+      <div id="nextPieceStyle">
         <canvas id="nextPiece" width="150" height="150">></canvas>
 
-
-    <div class="score">
-        Score: <div id="score">0</div><br>
-        Lines: <div id="lines">0</div>
-        <br>
-        Level: <div id="level">1</div>
-        <div id="shortcuts">
+        <div class="score">
+          Score:
+          <div id="score">0</div>
+          <br />
+          Lines:
+          <div id="lines">0</div>
+          <br />
+          Level:
+          <div id="level">1</div>
+          <div id="shortcuts">
             <h4>Shortcut keys:</h4>
-            <p>Arrows - move piece</p>
+            <p>Left, Right Arrows - move piece</p>
+            <p>UP Arrow - rotate piece</p>
+            <p>Down Arrow or Space - Speed down piece</p>
             <p>P - pause game</p>
-            <p>M - toggle music</p>
+            <p>M - pause music</p>
+            <p>N - play music</p>
             <p>F2 - new game</p>
-
+          </div>
         </div>
+      </div>
     </div>
-    </div>
-</div>
 
-
-<button id="myBtn">Open Modal</button>
-<!-- Game over & Score Modal -->
-<div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
+    <button id="myBtn">Open Modal</button>
+    <!-- Game over & Score Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
         <span class="close">&times;</span>
         <h1>Game over</h1>
         <h2>High Scores</h2>
         <div id="scores">
-            <p>Djole   5555</p>
-            <p>Djole   5555</p>
-            <p>Djole   5555</p>
-            <p>Djole   5555</p>
-            <p>Djole   5555</p>
-            <p>Djole   5555</p>
-            <p>Djole   5555</p>
-            <p>Djole   5555</p>
-            <p>Djole   5555</p>
-            <p>Djole   5555</p>
+          <p>Djole 5555</p>
+          <p>Djole 5555</p>
+          <p>Djole 5555</p>
+          <p>Djole 5555</p>
+          <p>Djole 5555</p>
+          <p>Djole 5555</p>
+          <p>Djole 5555</p>
+          <p>Djole 5555</p>
+          <p>Djole 5555</p>
+          <p>Djole 5555</p>
         </div>
 
         <button id="newGame">Start New Game</button>
+      </div>
     </div>
 
-</div>
-
-<script src="tetrominoes.js"></script>
-<script src="tetris.js"></script>
-<script src="tetris_addons.js"></script>
-
-</body>
+    <script src="tetrominoes.js"></script>
+    <script src="tetris.js"></script>
+    <script src="tetris_addons.js"></script>
+  </body>
 </html>
