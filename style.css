@@ -7,13 +7,6 @@
   font-family: monospace;
 }
 
-#tetris {
-  /*position: relative;*/
-  /*margin: 0 auto;*/
-  /*width: 800px;*/
-  /*height: 400px;*/
-}
-
 #canvas {
   position: relative;
   float: left;
