@@ -423,6 +423,8 @@ function changeLevel() {
   return speed;
 }
 
+
+
 //Clear temporary var
 function resetVar() {
   clearedRows = 0;
