@@ -1,9 +1,14 @@
 console.log();
 
-mySound = new sound('sound/move.wav');
+mySound = new sound('sound/test.mp3');
+lock = new sound('sound/lock.mp3');
 mainTheme = new sound('sound/Tetris.mp3');
 
 mainTheme.volume=0.1;
+
+function togglePlay(myAudio) {
+  return myAudio.paused ? myAudio.play() : myAudio.pause();
+};
 
 
 function sound(src) {

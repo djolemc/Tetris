@@ -189,6 +189,7 @@ Piece.prototype.moveDown = function () {
     } else {
         //we lock the piece and generate a new one
         this.lock();
+        lock.play();
 
         //deleting next piece board
         this.drawNext(nextPiece.activeTetromino, VACANT);
