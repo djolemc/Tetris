@@ -103,11 +103,11 @@ drawBoard();
 const PIECES = [
   [Z, 'red'],
   [S, 'green'],
-  [T, 'yellow'],
-  [O, 'blue'],
-  [L, 'purple'],
+  [T, 'purple'],
+  [O, 'yellow'],
+  [L, 'orange'],
   [I, 'cyan'],
-  [J, 'orange'],
+  [J, 'blue'],
 ];
 
 //generate random pieces
