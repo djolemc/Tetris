@@ -1,12 +1,17 @@
 console.log();
 
 mySound = new sound('sound/move.wav');
+mainTheme = new sound('sound/Tetris.mp3');
+
+mainTheme.volume=0.1;
+
 
 function sound(src) {
   this.sound = document.createElement('audio');
   this.sound.src = src;
   this.sound.setAttribute('preload', 'auto');
   this.sound.setAttribute('controls', 'none');
+  this.sound.setAttribute('muted', 'muted');
   this.sound.style.display = 'none';
   document.body.appendChild(this.sound);
   this.play = function () {
