@@ -50,6 +50,14 @@ body {
   margin: 70px;
 }
 
+ /* Modal button */
+
+ #myBtn {
+   border-radius: 5px;
+   margin-left: -145px;
+   margin-top: 20px;
+ }
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -74,16 +82,19 @@ body {
 #newGame {
   position: relative;
   margin-top: 100px;
+  border-radius: 5px;
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #181616;
   margin: 50px auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
+  border-radius: 15px;
   width: 400px; /* Could be more or less, depending on screen size */
   height: 600px;
+  color: rgb(199, 199, 199);
 }
 
 /* The Close Button */
