@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css?v=2" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY=" crossorigin="anonymous" />
   </head>
   <body>
     <div id="main">
@@ -19,7 +20,7 @@
       <div id="nextPieceStyle">
         <canvas id="nextPiece"></canvas>
 
-        <div class="score">
+        <div  none" class="score">
           Score:
           <div id="score">0</div>
           <br />
@@ -40,6 +41,7 @@
           </div>
         </div>
       </div>
+
     </div>
 
     <button id="myBtn">Open Modal</button>
@@ -66,6 +68,17 @@
         <button id="newGame">Start New Game</button>
       </div>
     </div>
+
+
+    <div id="enterScore">
+      <h2>New Highscore!</h2>
+      <input placeholder="Enter your name:" type="text" name="name" id="name">
+      <br>
+      <button  id="enter">Submit</button>
+
+
+    </div>
+
 
     <script src="tetrominoes.js"></script>
     <script src="tetris.js"></script>

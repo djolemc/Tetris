@@ -37,7 +37,7 @@ function setBoardSize() {
     drawMiniBoard();
     drawBoard();
 
-  console.log(SQ)
+
 
 }
 
@@ -46,8 +46,7 @@ function setBoardSize() {
 function createMultiplier() {
 
     var height = window.innerHeight;
-    multiplier = Math.floor(height / 200);
-    console.log(multiplier)
+    multiplier = (Math.floor(height / 200))-0.5;
     return multiplier;
 }
 
@@ -258,7 +257,10 @@ Piece.prototype.lock = function () {
                 // alert("Game Over");
                 //stop animation frame
                 gameOver = true;
-                modal.style.display = 'block';
+                document.removeEventListener('keydown', CONTROL);
+                checkHighscores();
+
+                // modal.style.display = 'block';
                 break;
             }
             //we lock the piece
