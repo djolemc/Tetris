@@ -43,13 +43,13 @@ body {
   margin: 70px;
 }
 
- /* Modal button */
+/* Modal button */
 
- #myBtn {
-   border-radius: 5px;
-   margin-left: -145px;
-   margin-top: 20px;
- }
+#myBtn {
+  border-radius: 5px;
+  margin-left: -145px;
+  margin-top: 20px;
+}
 
 /* The Modal (background) */
 .modal {
@@ -114,3 +114,4 @@ body {
 #shortcuts p {
   margin: 5px;
 }
+
