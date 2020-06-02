@@ -7,17 +7,13 @@
   font-family: monospace;
 }
 
-#name {
-  color: aliceblue;
-}
-
 #logBtn {
   position: absolute;
   width: 250px;
   height: 50px;
   margin-top: 20px;
   margin-left: 150px;
-  color: aliceblue;
+  color: white;
   background-color: transparent;
   border: 1px solid green;
   border-radius: 10px;
@@ -34,11 +30,13 @@
 #name {
   text-transform: uppercase;
   color: aqua;
+  font-family: Comic Sans MS;
   position: fixed;
   margin-top: 350px;
   margin-left: 190px;
   font-size: 2.5em;
   letter-spacing: 6px;
+  font-weight: bold;
 }
 
 #canvas {
