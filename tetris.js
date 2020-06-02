@@ -258,9 +258,15 @@ Piece.prototype.lock = function () {
                 //stop animation frame
                 gameOver = true;
                 document.removeEventListener('keydown', CONTROL);
-                checkHighscores();
+                //
+                // setTimeout(function () {
+                //     checkHighscores();
+                // },1000)
 
-                // modal.style.display = 'block';
+
+                 modal.style.display = 'block';
+
+
                 break;
             }
             //we lock the piece
@@ -391,8 +397,16 @@ function CONTROL(event) {
     } else if (event.keyCode == 40) {
         mySound.play();
         p.moveDown();
+        console.log(gameOver)
+        if (gameOver===true) {
+            checkHighscores();
+        }
+
     } else if (event.keyCode == 32) {
         p.moveDown();
+
+
+
     } else if (event.keyCode == 77) {
         muteSounds();
     } else if (event.keyCode == 78) {

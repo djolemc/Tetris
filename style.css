@@ -77,11 +77,13 @@ body {
 }
 
 #scores {
+  display: block;
   margin-top: 25px;
 }
 #newGame {
   position: relative;
-  margin-top: 100px;
+  margin-top: 480px;
+  margin-left: 200px;
   border-radius: 5px;
 }
 
@@ -148,4 +150,12 @@ body {
 }
 #enterScore button {
   width: 90%;
+}
+
+#score_list {
+  padding: 0;
+  margin-bottom: -10px;
+}
+span {
+  display: block;
 }
