@@ -7,6 +7,40 @@
   font-family: monospace;
 }
 
+#name {
+  color: aliceblue;
+}
+
+#logBtn {
+  position: absolute;
+  width: 250px;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 150px;
+  color: aliceblue;
+  background-color: transparent;
+  border: 1px solid green;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+#logBtn:hover {
+  background-color: rgb(60, 133, 133);
+  transition: 0.5s;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+#name {
+  text-transform: uppercase;
+  color: aqua;
+  position: fixed;
+  margin-top: 350px;
+  margin-left: 190px;
+  font-size: 2.5em;
+  letter-spacing: 6px;
+}
+
 #canvas {
   position: relative;
   float: left;
@@ -114,4 +148,3 @@ body {
 #shortcuts p {
   margin: 5px;
 }
-

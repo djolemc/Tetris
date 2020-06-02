@@ -1,3 +1,15 @@
+//Player Log In
+
+function playerLogIn() {
+  let player = prompt('Please enter you name to play tetris');
+  if (player != null) {
+    document.getElementById('name').innerHTML = player;
+  }
+  drop();
+}
+
+
+
 //Get windows size and set board and piece size
 
 var height = window.innerHeight;
@@ -423,8 +435,6 @@ function changeLevel() {
   return speed;
 }
 
-
-
 //Clear temporary var
 function resetVar() {
   clearedRows = 0;
@@ -432,7 +442,5 @@ function resetVar() {
 }
 
 //
-
-drop();
 
 // start = setInterval(drop(), 1);
