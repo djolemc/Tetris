@@ -3,11 +3,10 @@
 function playerLogIn() {
   let player = prompt('Please enter you name to play tetris');
   if (player === null) {
-    alert('Please enter player name!');
-    window.location.reload();
+    return;
   } else if (player === '') {
     alert('Player name must be provided!');
-    window.location.reload();
+    return;
   } else {
     document.getElementById('name').innerHTML = player;
   }
