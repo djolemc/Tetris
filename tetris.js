@@ -9,9 +9,13 @@ function playerLogIn() {
     return;
   } else {
     document.getElementById('name').innerHTML = player;
+    main.style.display = 'block';
+    logBtn.style.display = 'none';
   }
   drop();
 }
+
+
 
 //Get windows size and set board and piece size
 

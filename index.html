@@ -11,42 +11,43 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    
     <!-- PLayer Log In -->
 
-    <button id="logBtn" onclick="playerLogIn()">Enter your name to play</button>
+    <button id="logBtn" onclick="playerLogIn()">Start New Game</button>
     <p id="name"></p>
+    
+      <div id="main">
+        <!--<canvas id="tetris" width="300" height="600"></canvas>-->
+        <div id="canvas">
+          <canvas id="tetris"></canvas>
+        </div>
+        <div id="nextPieceStyle">
+          <canvas id="nextPiece" width="150" height="150">></canvas>
 
-    <div id="main">
-      <!--<canvas id="tetris" width="300" height="600"></canvas>-->
-      <div id="canvas">
-        <canvas id="tetris"></canvas>
-      </div>
-      <div id="nextPieceStyle">
-        <canvas id="nextPiece" width="150" height="150">></canvas>
-
-        <div class="score">
-          Score:
-          <div id="score">0</div>
-          <br />
-          Lines:
-          <div id="lines">0</div>
-          <br />
-          Level:
-          <div id="level">1</div>
-          <div id="shortcuts">
-            <h4>Shortcut keys:</h4>
-            <p>Left, Right Arrows - move piece</p>
-            <p>UP Arrow - rotate piece</p>
-            <p>Down Arrow or Space - Speed down piece</p>
-            <p>P - pause game</p>
-            <p>M - mute sound</p>
-            <p>N - play sound</p>
-            <p>F2 - new game</p>
+          <div class="score">
+            Score:
+            <div id="score">0</div>
+            <br />
+            Lines:
+            <div id="lines">0</div>
+            <br />
+            Level:
+            <div id="level">1</div>
+            <div id="shortcuts">
+              <h4>Shortcut keys:</h4>
+              <p>Left, Right Arrows - move piece</p>
+              <p>UP Arrow - rotate piece</p>
+              <p>Down Arrow or Space - Speed down piece</p>
+              <p>P - pause game</p>
+              <p>M - mute sound</p>
+              <p>N - play sound</p>
+              <p>F2 - new game</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
+    
     <button id="myBtn">Open Modal</button>
     <!-- Game over & Score Modal -->
     <div id="myModal" class="modal">
