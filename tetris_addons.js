@@ -56,3 +56,8 @@ newGame = document.getElementById('newGame');
 newGame.addEventListener('click', function () {
   window.location.reload();
 });
+
+start_new_game = document.getElementById('start_new_game');
+start_new_game.addEventListener('click', function() {
+  window.location.reload();
+});

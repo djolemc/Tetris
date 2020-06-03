@@ -11,6 +11,8 @@ function playerLogIn() {
     document.getElementById('name').innerHTML = player;
     main.style.display = 'block';
     logBtn.style.display = 'none';
+    welcome_msg.style.display = 'none';
+    start_new_game.style.display = 'block';
   }
   drop();
 }
