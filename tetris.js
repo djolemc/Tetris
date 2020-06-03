@@ -8,7 +8,7 @@ function playerLogIn() {
   } else if (player === '') {
     alert('Player name must be provided!');
     window.location.reload();
-  } else if (player != null) {
+  } else {
     document.getElementById('name').innerHTML = player;
   }
   drop();
