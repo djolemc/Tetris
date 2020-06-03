@@ -2,13 +2,14 @@
 
 function playerLogIn() {
   let player = prompt('Please enter you name to play tetris');
-  if (player != null) {
+  if (player === '') {
+    alert('Player name must be provided');
+    return;
+  } else {
     document.getElementById('name').innerHTML = player;
   }
   drop();
 }
-
-
 
 //Get windows size and set board and piece size
 
