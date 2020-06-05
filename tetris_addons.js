@@ -61,3 +61,6 @@ start_new_game = document.getElementById('start_new_game');
 start_new_game.addEventListener('click', function() {
   window.location.reload();
 });
+
+restart_game = document.getElementById('restart_game');
+restart_game.addEventListener('click', );

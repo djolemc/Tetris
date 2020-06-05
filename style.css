@@ -28,6 +28,27 @@
   transition: 0.5s;
 }
 
+#restart_game {
+  position: absolute;
+  display: none;
+  margin-left: 100px;
+  margin-top: 65px;
+  width: 200px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid green;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: white;
+}
+
+#restart_game:hover {
+  cursor: pointer;
+  letter-spacing: 2.5px;
+  background-color: rgb(60, 133, 133);
+  transition: 0.5s;
+}
+
 #welcome_msg {
   position: absolute;
   color: rgb(243, 240, 240);

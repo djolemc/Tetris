@@ -13,6 +13,7 @@ function playerLogIn() {
     logBtn.style.display = 'none';
     welcome_msg.style.display = 'none';
     start_new_game.style.display = 'block';
+    restart_game.style.display = 'block';
   }
   drop();
 }
@@ -453,3 +454,9 @@ function resetVar() {
 //
 
 // start = setInterval(drop(), 1);
+
+//restart_game
+
+function restart_game() {
+  
+}
