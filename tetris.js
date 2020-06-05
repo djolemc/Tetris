@@ -18,8 +18,6 @@ function playerLogIn() {
   drop();
 }
 
-
-
 //Get windows size and set board and piece size
 
 var height = window.innerHeight;
@@ -457,6 +455,6 @@ function resetVar() {
 
 //restart_game
 
-function restart_game() {
+function restartGame() {
   
 }

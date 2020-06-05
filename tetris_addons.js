@@ -63,4 +63,4 @@ start_new_game.addEventListener('click', function() {
 });
 
 restart_game = document.getElementById('restart_game');
-restart_game.addEventListener('click', );
+restart_game.addEventListener('click', restartGame);
