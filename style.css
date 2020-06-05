@@ -32,7 +32,7 @@
   position: absolute;
   color: rgb(243, 240, 240);
   margin-top: 20vh;
-  margin-left: 83vh;
+  margin-left: 85vh;
   font-size: 2em;
 }
 
@@ -98,7 +98,7 @@ body {
   margin-left: 130px;
   margin-top: 100px;
   border: 1px solid green;
-  width: 200px;
+  width: 180px;
   height: 150px;
 }
 
