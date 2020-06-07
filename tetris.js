@@ -456,5 +456,9 @@ function resetVar() {
 //restart_game
 
 function restartGame() {
-  
+  document.getElementById('score').innerHTML = 0;
+  score = 0;
+  document.getElementById('lines').innerHTML = 0;
+  cleared = 0;
+  document.getElementById('level').innerHTML = 0;
 }
