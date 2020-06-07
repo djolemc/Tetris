@@ -135,6 +135,7 @@ body {
 /* Modal button */
 
 #myBtn {
+  display: none;
   margin-left: -175px;
   margin-top: 20px;
   width: 150px;

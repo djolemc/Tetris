@@ -455,6 +455,7 @@ function resetVar() {
 
 //restart_game
 
+
 function restartGame() {
   
 }
