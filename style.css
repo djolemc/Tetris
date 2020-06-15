@@ -1,110 +1,233 @@
-#score, #level, #lines {
-    display: inline;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: monospace;
+#score,
+#level,
+#lines {
+  display: inline;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: monospace;
 }
 
-#tetris {
-    /*position: relative;*/
-    /*margin: 0 auto;*/
-    /*width: 800px;*/
-    /*height: 400px;*/
+#start_new_game {
+  position: absolute;
+  display: none;
+  margin-left: 100px;
+  margin-top: 20px;
+  width: 200px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid green;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: white;
+}
+
+#start_new_game:hover {
+  cursor: pointer;
+  letter-spacing: 2.5px;
+  background-color: rgb(60, 133, 133);
+  transition: 0.5s;
+}
+
+#restart_game {
+  position: absolute;
+  display: none;
+  margin-left: 100px;
+  margin-top: 65px;
+  width: 200px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid green;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: white;
+}
+
+#restart_game:hover {
+  cursor: pointer;
+  letter-spacing: 2.5px;
+  background-color: rgb(60, 133, 133);
+  transition: 0.5s;
+}
+
+#welcome_msg {
+  position: absolute;
+  color: rgb(243, 240, 240);
+  margin-top: 20vh;
+  margin-left: 85vh;
+  font-size: 2em;
+}
+
+#welcome_msg span {
+  color: green;
+  text-transform: uppercase;
+}
+
+#logBtn {
+  position: absolute;
+  width: 180px;
+  height: 50px;
+  margin-top: 40vh;
+  margin-left: 90vh;
+  color: white;
+  background-color: transparent;
+  border: 1px solid green;
+  border-radius: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#logBtn:hover {
+  background-color: rgb(60, 133, 133);
+  transition: 0.5s;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+#name {
+  text-transform: uppercase;
+  color: aqua;
+  font-family: Comic Sans MS;
+  position: fixed;
+  margin-top: 350px;
+  margin-left: 100px;
+  font-size: 2.5em;
+  letter-spacing: 6px;
+  font-weight: bold;
 }
 
 #canvas {
-    position: relative;
-    float: left;
-    margin-left: 35vw;
-    margin-top: 20px;
+  position: relative;
+  float: left;
+  margin-left: 35vw;
+  margin-top: 20px;
 }
 
 body {
-    background-color: black;
+  background-color: black;
 }
 
 #main {
-    /*width: 300px;*/
-    position: relative;
-    margin: 0 auto;
+  /*width: 300px;*/
+  position: relative;
+  margin: 0 auto;
+  display: none;
 }
 
 #nextPieceStyle {
-    position: relative;
-    float: left;
-    margin-left: 50px;
-    margin-top: 100px;
-    border: 1px solid green;
-    width: 150px;
-    height: 150px;
+  position: relative;
+  float: left;
+  margin-left: 130px;
+  margin-top: 100px;
+  border: 1px solid green;
+  width: 180px;
+  height: 150px;
 }
 
 .score {
-    position: relative;
-    color: white;
-    font-size: 24px;
-    width: 250px;
-    float: left;
-    margin:30px;
+  position: relative;
+  color: white;
+  font-size: 24px;
+  width: 250px;
+  float: left;
+  margin: 70px;
+}
+
+/* Modal button */
+
+#myBtn {
+  display: none;
+  margin-left: -175px;
+  margin-top: 20px;
+  width: 150px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid green;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: white;
+}
+
+#myBtn:hover {
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  background-color: rgb(60, 133, 133);
+  transition: 0.5s;
 }
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 .modal h1 {
-    text-align: center;
+  text-align: center;
 }
 
 #scores {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 #newGame {
-    position: relative;
-    margin-top: 100px;
+  position: relative;
+  width: 180px;
+  margin-left: 25%;
+  height: 30px;
+  margin-top: 100px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid green;
+  text-transform: uppercase;
+  color: white;
+}
+
+#newGame:hover {
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  background-color: rgb(60, 133, 133);
+  transition: 0.5s;
 }
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
-    margin: 50px auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 400px; /* Could be more or less, depending on screen size */
-    height: 600px;
+  background-color: #181616;
+  margin: 50px auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 15px;
+  width: 400px; /* Could be more or less, depending on screen size */
+  height: 600px;
+  color: rgb(199, 199, 199);
 }
 
 /* The Close Button */
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 #shortcuts {
-    font-size: 16px;
-    line-height: normal;
-    margin-left: -20px;
+  font-size: 16px;
+  line-height: normal;
+  margin-left: -20px;
 }
 
 #shortcuts p {
-    margin: 5px;
+  margin: 5px;
 }
